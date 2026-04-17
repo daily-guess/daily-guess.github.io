@@ -261,7 +261,67 @@
     }
     .modal input.name-input:focus { border-color: #3b82f6; }
 
-    /* DONE SCREEN */
+    /* AD SLOTS */
+    .ad-layout {
+      display: block;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .ad-left {
+      position: fixed;
+      left: calc(50% - 560px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 160px;
+      min-height: 320px;
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .ad-right {
+      position: fixed;
+      right: calc(50% - 560px);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ad-right-box {
+      width: 160px;
+      height: 150px;
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .ad-label {
+      font-size: 11px;
+      font-weight: bold;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+    }
+    .ad-center {
+      max-width: 900px;
+      margin: 8px auto 0;
+      text-align: center;
+      font-size: 12px;
+      color: #475569;
+    }
+    .ad-center a { color: #3b82f6; text-decoration: none; }
+    .ad-center a:hover { text-decoration: underline; }
+
+    /* hide ad slots on small screens */
+    @media (max-width: 800px) {
+      .ad-left, .ad-right { display: none; }
+    }
     .done-card {
       background: #1e293b;
       border-radius: 16px;
@@ -295,6 +355,16 @@
     <button class="btn-ranking" onclick="openRanking()">🏆 Ranking</button>
   </div>
 
+  <div class="ad-layout">
+
+    <!-- AD LEFT -->
+    <div class="ad-left">
+      <div class="ad-label">Anuncie aqui</div>
+    </div>
+
+    <!-- GAME COLUMN -->
+    <div style="flex:1;min-width:0;max-width:420px;">
+
   <!-- GAME CARD -->
   <div class="card" id="game-card">
     <div class="image-box" id="image">🍎</div>
@@ -310,6 +380,8 @@
     <div class="sub-info" id="sub-info"></div>
   </div>
 
+
+
   <!-- DONE CARD -->
   <div class="done-card" id="done-card">
     <div class="done-emoji">🌙</div>
@@ -319,6 +391,24 @@
     <p>Volte amanhã para novos desafios!</p>
     <br>
     <button class="btn-ranking" style="padding:10px 20px;font-size:15px" onclick="openRanking()">🏆 Ver Ranking</button>
+  </div>
+
+    </div><!-- end game column -->
+
+    <!-- AD RIGHT -->
+    <div class="ad-right">
+      <div class="ad-right-box">
+        <div class="ad-label">Anuncie aqui</div>
+      </div>
+      <div class="ad-right-box">
+        <div class="ad-label">Anuncie aqui</div>
+      </div>
+    </div>
+
+  </div><!-- end ad-layout -->
+
+  <div class="ad-center">
+    Para anúncios contate: <a href="mailto:guilherme.rogaku@gmail.com">guilherme.rogaku@gmail.com</a>
   </div>
 
   <!-- MODAL: SEM ENERGIA -->
@@ -752,5 +842,9 @@
       document.getElementById("modal-name").classList.add("open");
     }
   </script>
+  <div style="position:fixed;bottom:12px;right:16px;text-align:right;font-size:12px;font-weight:bold;color:#475569;line-height:1.5;">
+    Site ainda em desenvolvimento.<br>Algumas imagens podem não abrir pelo celular.
+  </div>
+
 </body>
 </html>
