@@ -375,7 +375,6 @@
   </div>
 
   <img src="imagemcentro.png" alt="Guess It Daily" style="width:min(280px,70vw);display:block;margin:0 auto 10px;">
-  <p class="subtitle">Veja a imagem e escreva a palavra em inglês</p>
 
   <!-- TOP BAR -->
   <div class="top-bar">
@@ -394,7 +393,7 @@
     <div class="pt-hint" id="pt-hint"></div>
     <div class="category" id="category"></div>
     <div class="letter-hint" id="letter-hint"></div>
-    <input type="text" id="guess" placeholder="Type the word in English..." autocomplete="off">
+    <input type="text" id="guess" placeholder="Escreva a palavra em Inglês..." autocomplete="off">
     <div class="buttons">
       <button class="btn-main" id="btn-guess" onclick="checkGuess()">Adivinhar</button>
       <button class="btn-main" id="btn-next" onclick="nextRound()" style="display:none">▶ Próximo</button>
@@ -715,7 +714,6 @@
       document.getElementById("pt-hint").innerHTML  = current.pt ? `🇧🇷 Passe o mouse para ver a tradução: <span>${current.pt}</span>` : "";
       document.getElementById("guess").value        = "";
       document.getElementById("result").innerText   = "";
-      document.getElementById("sub-info").innerText = "Tente adivinhar a palavra em inglês!";
 
       enableInput();
       document.getElementById("btn-next").style.display = "none";
